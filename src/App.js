@@ -14,8 +14,8 @@ function App() {
       <section>
         <Navbar />
         <Home />
+        <Process />
         <main className="container px-24">
-          <Process />
           <Footer />
         </main>
         <BottomFooter />
