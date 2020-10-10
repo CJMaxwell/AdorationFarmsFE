@@ -25,7 +25,7 @@ const Wrapper = styled.section`
 
 const Process = () => {
   return (
-    <Wrapper>
+    <Wrapper id="our-process">
       <section className="wrapper px-24 text-white py-24">
         <section className="flex justify-center pb-10">
           <h1 className="font-semibold text-xl uppercase">
@@ -105,7 +105,7 @@ const Process = () => {
         <section className="pr-24 pt-16">
           <h1 className="font-semibold text-xl">Adoration Palm Oil</h1>
           <p className="pt-6">
-            Our amazing palm oild from Adoration Farms helps in decreasing cholesterol levels, reducing oxidative stress,
+            Our amazing palm oil from Adoration Farms helps in decreasing cholesterol levels, reducing oxidative stress,
             boosting brain health, slowing the progression of heart disease, increasing vitamin A status,
             and improving skin and hair health. This is because they are processed with no addictives.
         </p>

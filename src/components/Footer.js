@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa'
 
 const Wrapper = styled.footer`
@@ -18,19 +19,19 @@ const Footer = () => {
         </p>
         <ul className="flex items-center space-x-4 mt-4">
           <li>
-            <a className="cursor-pointer">
+            <Link to="#instagram" className="cursor-pointer">
               <FaInstagram />
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="cursor-pointer">
+            <Link to="#fb" className="cursor-pointer">
               <FaFacebookF />
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="cursor-pointer">
+            <Link to="#twitter" className="cursor-pointer">
               <FaTwitter />
-            </a>
+            </Link>
           </li>
         </ul>
       </section>
@@ -46,19 +47,19 @@ const Footer = () => {
         <h1 className="font-semibold text-xl">Quick Links</h1>
         <ul className="mt-2">
           <li>
-            <a className="cursor-pointer">
-              Terms &amp; Conditions
-            </a>
+            <Link to="/terms-conditions" className="cursor-pointer">
+              T&amp;C
+            </Link>
           </li>
           <li>
-            <a className="cursor-pointer">
+            <Link to="/about" className="cursor-pointer">
               About Us
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="cursor-pointer">
+            <Link to="/signup" className="cursor-pointer">
               Sign up
-            </a>
+            </Link>
           </li>
         </ul>
       </section>

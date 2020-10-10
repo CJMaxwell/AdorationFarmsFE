@@ -12,6 +12,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import TermsCondition from './components/TermsCondition';
 import Footer from './components/Footer';
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route path="/signup">
               <Signup />
+            </Route>
+            <Route path="/terms-conditions">
+              <TermsCondition />
             </Route>
           </Switch>
           <main className="container px-24">
