@@ -1,27 +1,45 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import { ThemeProvider } from 'styled-components';
 
 import { theme } from './styles/theme';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import About from './components/About';
+import Signup from './components/Signup';
+import Login from './components/Login';
 import Footer from './components/Footer';
-import BottomFooter from './components/BottomFooter';
-import Process from './components/Process';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <section>
-        <Navbar />
-        <Home />
-        <Process />
-        <main className="container px-24">
-          <Footer />
-        </main>
-        <BottomFooter />
-      </section>
-    </ThemeProvider>
-
+    <Router>
+      <ThemeProvider theme={theme}>
+        <section>
+          <Navbar />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/signup">
+              <Signup />
+            </Route>
+          </Switch>
+          <main className="container px-24">
+            <Footer />
+          </main>
+        </section>
+      </ThemeProvider>
+    </Router>
   );
 }
 

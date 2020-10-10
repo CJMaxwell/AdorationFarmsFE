@@ -2,4 +2,13 @@
 
 @tailwind components;
 
+html {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+}
+a {
+  cursor: pointer;
+}
+
 @tailwind utilities;
+

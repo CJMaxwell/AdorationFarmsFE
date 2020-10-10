@@ -8,13 +8,13 @@ const Wrapper = styled.footer`
 
 const Footer = () => {
   return (
-    <Wrapper className="sm:block lg:flex lg:items-start lg:space-x-24 lg:py-24 sm:mt-10">
+    <Wrapper className="sm:block lg:flex lg:items-start lg:space-x-24 lg:pt-24 lg:pb-12 sm:mt-10">
       <section>
         <h1 className="font-semibold text-xl">Adoration Farms</h1>
         <p className="mt-2">
-          It begins with a Palm tree,
-          Adoration Farms is increasing palm oil production by allowing you easily own
-          a farm with a promise to manage all the processes involved in palm oil production.
+          Adoration Farms gives you the opportunity to own a Palm plantation in Nigeria. It all starts with a seed;
+          We use improved quality seeds that produce higher yields and are naturally more resistant to diseases
+          and pests.
         </p>
         <ul className="flex items-center space-x-4 mt-4">
           <li>
