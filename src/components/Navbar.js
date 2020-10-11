@@ -37,14 +37,11 @@ const Navbar = () => {
           <Link to="/about" className="block mt-4 text-lg lg:inline-block lg:mt-0 font-semibold text-color hover:text-white mr-4">
             About Us
             </Link>
-          <Link
-            to={{
-              pathname: "/",
-              hash: "#our-process"
-            }}
+          <a
+            href="/#our-process"
             className="block mt-4 text-lg lg:inline-block lg:mt-0 font-semibold text-color hover:text-white mr-4">
             Our Process
-          </Link>
+          </a>
           <Link to="/login" className="block mt-4 text-lg lg:inline-block lg:mt-0 font-semibold text-color mr-4 hover:text-white">
             Sign in
           </Link>

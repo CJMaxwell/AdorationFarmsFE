@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { GoDashboard } from 'react-icons/go';
@@ -19,9 +20,15 @@ const Logo = styled.section`
 `;
 
 const DashboardSidebar = () => {
+  const history = useHistory();
+
+  const handleClick = () => history.push('/');
+
   return (
     <Wrapper className="w-1/4 pb-8 text-white">
-      <Logo />
+      <Link to="/">
+        <Logo />
+      </Link>
       <ul className="pt-8">
         <li className="flex items-center space-x-8 px-16 py-4 border-b border-white">
           <GoDashboard
@@ -41,7 +48,7 @@ const DashboardSidebar = () => {
             color="#FFF"
           />
           <Link
-            to="/dashboard"
+            to="/scheduled-payment"
           >
             Scheduled Payment
             </Link>
@@ -62,11 +69,13 @@ const DashboardSidebar = () => {
             size="1.5rem"
             color="#FFF"
           />
-          <Link
-            to="/dashboard"
+          <button
+            type="button"
+            className="focus:outline-none"
+            onClick={handleClick}
           >
             Logout
-            </Link>
+          </button>
         </li>
       </ul>
     </Wrapper>

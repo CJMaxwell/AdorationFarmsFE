@@ -16,6 +16,8 @@ import TermsCondition from './components/TermsCondition';
 import Footer from './components/Footer';
 import Dashboard from './components/Dashboard';
 import Settings from './components/Settings';
+import ScheduledPayment from './components/ScheduledPayment';
+import Invest from './components/Invest';
 
 function App() {
   return (
@@ -63,6 +65,12 @@ function App() {
             </Route>
             <Route path="/dashboard">
               <Dashboard />
+            </Route>
+            <Route path="/scheduled-payment">
+              <ScheduledPayment />
+            </Route>
+            <Route path="/invest">
+              <Invest />
             </Route>
           </Switch>
         </section>

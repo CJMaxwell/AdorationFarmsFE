@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 import DashboardSidebar from './DashboardSidebar';
 import ProfileNavbar from './ProfileNavbar';
@@ -9,62 +10,27 @@ const Wrapper = styled.section`
   background-color: ${({ theme }) => theme.colors.gray3};
   height: 100vh;
 }
-.continue-btn {
-  background-image: linear-gradient(164deg,#7E1A16,#FE7A15);
+.investment {
+  background-color: ${({ theme }) => theme.colors.gray3};
 }
+.invest-now {
+  background-image: linear-gradient(164deg,#7E1A16,#FE7A15);
+};
 `;
 
 
 const Dashboard = () => {
+  const history = useHistory();
+
+  const handleClick = () => history.push('/invest');
+
   return (
     <Wrapper className="flex">
       <DashboardSidebar />
       <main className="w-3/4 main-section">
         <ProfileNavbar />
         <section className="flex">
-          <section className="w-1/2 my-8 ml-8 mr-4 p-12 bg-white">
-            <section className="text-center">
-              <h1 className="text-lg font-semibold">
-                New Investment
-              </h1>
-            </section>
-            <form className="pt-8">
-              <section className="relative">
-                <select className="block appearance-none w-full bg-white border border-gray-700 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                  <option value="">Select your location</option>
-                  <option value="ogun">Ogun State</option>
-                </select>
-                <section className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
-                </section>
-              </section>
-              <section className="relative mt-6">
-                <select className="block appearance-none w-full bg-white border border-gray-700 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                  <option value="">Select Acres</option>
-                  <option value="5">5 acres</option>
-                  <option value="10">10 acres</option>
-                  <option value="15">15 acres</option>
-                  <option value="20">20 acres</option>
-                </select>
-                <section className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
-                </section>
-              </section>
-              <section>
-                <section className="mt-6">
-                  <p className="py-2 font-semibold text-xl text-center">
-                    &#8358;104,000
-                  </p>
-                </section>
-              </section>
-              <section className="mt-8">
-                <button type="submit" className="rounded-full w-full text-white px-8 py-4 text-xl continue-btn">
-                  Continue
-                </button>
-              </section>
-            </form>
-          </section>
-          <section className="w-1/2 my-8 ml-4 mr-8 p-12 bg-white">
+          <section className="w-1/2 my-8 ml-8 mr-4 p-12 bg-white shadow-lg rounded-lg">
             <section className="text-center">
               <h1 className="font-semibold text-lg">Palm plantation</h1>
             </section>
@@ -75,6 +41,35 @@ const Dashboard = () => {
                 Adoration Farms helps in managing the farmland from plumbing to harvesting as well as getting the
                 getting the land's documents.
               </article>
+            </section>
+            <section className="mt-16 text-center">
+              <button
+                type="submit"
+                className="uppercase text-white rounded-full px-8 py-4 text-xl invest-now focus:outline-none"
+                onClick={handleClick}
+              >
+                Invest Now
+            </button>
+            </section>
+          </section>
+          <section className="w-1/2 my-8 ml-4 mr-8 p-12 bg-white shadow-lg rounded-lg">
+            <section className="text-center">
+              <h1 className="font-semibold text-lg">Current Investments</h1>
+            </section>
+            <section className="mt-6">
+              <p>No Current investments</p>
+            </section>
+            <section className="flex justify-between p-4">
+              <section className="investment w-1/2 mr-8 p-8 rounded-lg">
+                <h1 className="text-lg">Ogun state</h1>
+                <p className="font-semibold text-xl py-2">&#8358;1,050,000</p>
+                <p className="text-sm">10/10/2020</p>
+              </section>
+              <section className="investment w-1/2 mr-8 p-8 rounded-lg">
+                <h1 className="text-lg">Lagos state</h1>
+                <p className="font-semibold text-xl py-2">&#8358;3,450,500</p>
+                <p className="text-sm">10/10/2020</p>
+              </section>
             </section>
           </section>
         </section>
