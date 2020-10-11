@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 import CustomLink from './actoms/CustomLink';
 
@@ -24,6 +25,11 @@ const Wrapper = styled.section`
 
 
 const Process = () => {
+
+  const history = useHistory();
+
+  const handleClick = () => history.push('/dashboard');
+
   return (
     <Wrapper id="our-process">
       <section className="wrapper px-24 text-white py-24">
@@ -95,7 +101,9 @@ const Process = () => {
           </section>
         </section>
         <section className="flex justify-center pt-10">
-          <CustomLink>
+          <CustomLink
+            onClick={handleClick}
+          >
             Get Started
           </CustomLink>
         </section>

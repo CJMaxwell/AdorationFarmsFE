@@ -16,7 +16,7 @@ const ProfileNavbar = () => {
         <li>
           Oct., 10, 2020 21:53
             </li>
-        <li className="flex space-x-4 items-center">
+        <li className="flex space-x-4 items-center cursor-pointer">
           <h1 className="text-lg">Mr. Chijioke Maxwell</h1>
           <BiUserCircle
             size="2.5rem"
