@@ -14,33 +14,57 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import TermsCondition from './components/TermsCondition';
 import Footer from './components/Footer';
+import Dashboard from './components/Dashboard';
+import Settings from './components/Settings';
 
 function App() {
   return (
     <Router>
       <ThemeProvider theme={theme}>
         <section>
-          <Navbar />
           <Switch>
             <Route exact path="/">
+              <Navbar />
               <Home />
+              <main className="container px-24">
+                <Footer />
+              </main>
             </Route>
             <Route path="/about">
+              <Navbar />
               <About />
+              <main className="container px-24">
+                <Footer />
+              </main>
             </Route>
             <Route path="/login">
+              <Navbar />
               <Login />
+              <main className="container px-24">
+                <Footer />
+              </main>
             </Route>
             <Route path="/signup">
+              <Navbar />
               <Signup />
+              <main className="container px-24">
+                <Footer />
+              </main>
             </Route>
             <Route path="/terms-conditions">
+              <Navbar />
               <TermsCondition />
+              <main className="container px-24">
+                <Footer />
+              </main>
+            </Route>
+            <Route path="/settings">
+              <Settings />
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard />
             </Route>
           </Switch>
-          <main className="container px-24">
-            <Footer />
-          </main>
         </section>
       </ThemeProvider>
     </Router>
