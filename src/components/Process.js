@@ -112,7 +112,7 @@ const Process = () => {
         <section className="oil-kernel" />
         <section className="pr-24 pt-16">
           <h1 className="font-semibold text-xl">Adoration Palm Oil</h1>
-          <p className="pt-6">
+          <p className="pt-6 text-justify">
             Our amazing palm oil from Adoration Farms helps in decreasing cholesterol levels, reducing oxidative stress,
             boosting brain health, slowing the progression of heart disease, increasing vitamin A status,
             and improving skin and hair health. This is because they are processed with no addictives.

@@ -14,6 +14,9 @@ const Wrapper = styled.section`
   .content {
     padding-top: 25vh;
   }
+  .big-text {
+    font-size: 4.875rem;
+  }
 `;
 
 const Banner = () => {
@@ -21,7 +24,7 @@ const Banner = () => {
     <Wrapper>
       <section className="text-white w-3/5 pl-24">
         <section className="content">
-          <h1 className="font-semibold text-3xl uppercase">
+          <h1 className="font-semibold big-text uppercase">
             Bridging the Gap
           </h1>
           <p className="text-xl pt-4">
