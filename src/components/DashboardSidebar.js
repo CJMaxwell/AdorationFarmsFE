@@ -22,7 +22,10 @@ const Logo = styled.section`
 const DashboardSidebar = () => {
   const history = useHistory();
 
-  const handleClick = () => history.push('/');
+  const handleClick = () => {
+    localStorage.removeItem('token');
+    history.push('/');
+  }
 
   return (
     <Wrapper className="w-1/4 pb-8 text-white">

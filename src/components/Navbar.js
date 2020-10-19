@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { BiUserCircle } from 'react-icons/bi';
+
+import useProfile from '../hooks/useProfile';
 
 const MenuBar = styled.nav`
   border-style: solid;
@@ -19,6 +22,10 @@ const MenuBar = styled.nav`
 `;
 
 const Navbar = () => {
+
+  const profile = useProfile();
+  // console.log(profile);
+
   return (
     <MenuBar className="flex items-center bg-white justify-between uppercase flex-wrap py-12 px-24">
       <Link to="/">
@@ -42,16 +49,32 @@ const Navbar = () => {
             className="block mt-4 text-lg lg:inline-block lg:mt-0 font-semibold text-color hover:text-white mr-4">
             Our Process
           </a>
-          <Link to="/login" className="block mt-4 text-lg lg:inline-block lg:mt-0 font-semibold text-color mr-4 hover:text-white">
-            Sign in
-          </Link>
-
+          {
+            !profile && (
+              <Link to="/login" className="block mt-4 text-lg lg:inline-block lg:mt-0 font-semibold text-color mr-4 hover:text-white">
+                Sign in
+              </Link>
+            )
+          }
         </div>
-        <div>
-          <Link to="/signup" className="inline-block text-lg px-8 py-4 leading-none rounded-full signup-bg font-semibold  text-white hover:border-transparent mt-4 lg:mt-0">
-            Sign up
-          </Link>
-        </div>
+        {
+          !profile && (
+            <div>
+              <Link to="/signup" className="inline-block text-lg px-8 py-4 leading-none rounded-full signup-bg font-semibold  text-white hover:border-transparent mt-4 lg:mt-0">
+                Sign up
+              </Link>
+            </div>
+          )
+        }
+        {
+          profile && (
+            <Link to="/dashboard" className="flex space-x-4 items-center cursor-pointer">
+              <BiUserCircle
+                size="2.5rem"
+              />
+            </Link>
+          )
+        }
       </div>
     </MenuBar>
   )

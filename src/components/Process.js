@@ -28,7 +28,7 @@ const Process = () => {
 
   const history = useHistory();
 
-  const handleClick = () => history.push('/dashboard');
+  const handleClick = () => history.push('/signup');
 
   return (
     <Wrapper id="our-process">

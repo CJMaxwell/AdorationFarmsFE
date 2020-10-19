@@ -2,6 +2,8 @@ import React from 'react';
 import { BiUserCircle } from 'react-icons/bi';
 import styled from 'styled-components';
 
+import useProfile from '../hooks/useProfile';
+
 const Wrapper = styled.nav`
   background-color: ${({ theme }) => theme.colors.gray3};
   border-style: solid;
@@ -10,19 +12,31 @@ const Wrapper = styled.nav`
 `;
 
 const ProfileNavbar = () => {
+
+  const profile = useProfile();
+
   return (
     <Wrapper className="dashboard-nav py-4">
-      <ul className="flex items-center justify-between px-24">
-        <li>
-          Oct., 10, 2020 21:53
-            </li>
-        <li className="flex space-x-4 items-center cursor-pointer">
-          <h1 className="text-lg">Mr. Chijioke Maxwell</h1>
-          <BiUserCircle
-            size="2.5rem"
-          />
+      {
+        profile && (
+          <ul className="flex items-center justify-between px-24">
+            <li>
+              Oct., 10, 2020 21:53
         </li>
-      </ul>
+            <li className="flex space-x-4 items-center cursor-pointer">
+              <h1 className="text-lg">
+                {
+                  `${profile.firstName} ${profile.lastName}`
+                }
+              </h1>
+              <BiUserCircle
+                size="2.5rem"
+              />
+            </li>
+          </ul>
+        )
+      }
+
     </Wrapper>
   )
 }

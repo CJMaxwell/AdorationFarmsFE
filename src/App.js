@@ -5,6 +5,8 @@ import {
   Route
 } from "react-router-dom";
 import { ThemeProvider } from 'styled-components';
+import Notifications from 'react-notify-toast';
+
 
 import { theme } from './styles/theme';
 import Navbar from './components/Navbar';
@@ -18,11 +20,13 @@ import Dashboard from './components/Dashboard';
 import Settings from './components/Settings';
 import ScheduledPayment from './components/ScheduledPayment';
 import Invest from './components/Invest';
+import AuthenticatedRoute from './components/AuthenticatedRoute';
 
 function App() {
   return (
     <Router>
       <ThemeProvider theme={theme}>
+        <Notifications />
         <section>
           <Switch>
             <Route exact path="/">
@@ -60,18 +64,18 @@ function App() {
                 <Footer />
               </main>
             </Route>
-            <Route path="/settings">
+            <AuthenticatedRoute path="/settings">
               <Settings />
-            </Route>
-            <Route path="/dashboard">
+            </AuthenticatedRoute>
+            <AuthenticatedRoute path="/dashboard">
               <Dashboard />
-            </Route>
-            <Route path="/scheduled-payment">
+            </AuthenticatedRoute>
+            <AuthenticatedRoute path="/scheduled-payment">
               <ScheduledPayment />
-            </Route>
-            <Route path="/invest">
+            </AuthenticatedRoute>
+            <AuthenticatedRoute path="/invest">
               <Invest />
-            </Route>
+            </AuthenticatedRoute>
           </Switch>
         </section>
       </ThemeProvider>
