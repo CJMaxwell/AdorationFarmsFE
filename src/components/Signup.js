@@ -22,6 +22,7 @@ const Wrapper = styled.section`
 };
   .login {
   background: -webkit-linear-gradient(164deg,#90cc41,#21954a);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 };
