@@ -21,6 +21,7 @@ import Settings from './components/Settings';
 import ScheduledPayment from './components/ScheduledPayment';
 import Invest from './components/Invest';
 import AuthenticatedRoute from './components/AuthenticatedRoute';
+import InvestmentProvider from './providers/InvestmentProvider';
 
 function App() {
   return (
@@ -70,12 +71,14 @@ function App() {
             <AuthenticatedRoute path="/dashboard">
               <Dashboard />
             </AuthenticatedRoute>
-            <AuthenticatedRoute path="/scheduled-payment">
-              <ScheduledPayment />
-            </AuthenticatedRoute>
-            <AuthenticatedRoute path="/invest">
-              <Invest />
-            </AuthenticatedRoute>
+            <InvestmentProvider>
+              <AuthenticatedRoute path="/scheduled-payment">
+                <ScheduledPayment />
+              </AuthenticatedRoute>
+              <AuthenticatedRoute path="/invest">
+                <Invest />
+              </AuthenticatedRoute>
+            </InvestmentProvider>
           </Switch>
         </section>
       </ThemeProvider>

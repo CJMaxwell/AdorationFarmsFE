@@ -1,6 +1,7 @@
 import React from 'react';
 import { BiUserCircle } from 'react-icons/bi';
 import styled from 'styled-components';
+import format from 'date-fns/format';
 
 import useProfile from '../hooks/useProfile';
 
@@ -21,8 +22,10 @@ const ProfileNavbar = () => {
         profile && (
           <ul className="flex items-center justify-between px-24">
             <li>
-              Oct., 10, 2020 21:53
-        </li>
+              {
+                format(new Date(), 'MMM. d, yyyy H:mm')
+              }
+            </li>
             <li className="flex space-x-4 items-center cursor-pointer">
               <h1 className="text-lg">
                 {

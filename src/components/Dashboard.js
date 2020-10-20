@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import format from 'date-fns/format';
 
 import DashboardSidebar from './DashboardSidebar';
 import ProfileNavbar from './ProfileNavbar';
+import useInvestment from '../hooks/useInvestment';
 
 const Wrapper = styled.section`
 .main-section {
@@ -23,6 +25,7 @@ const Dashboard = () => {
   const history = useHistory();
 
   const handleClick = () => history.push('/invest');
+  const investments = useInvestment();
 
   return (
     <Wrapper className="flex">
@@ -56,20 +59,32 @@ const Dashboard = () => {
             <section className="text-center">
               <h1 className="font-semibold text-lg">Current Investments</h1>
             </section>
-            <section className="mt-6">
-              <p>No Current investments</p>
-            </section>
-            <section className="flex justify-between p-4">
-              <section className="investment w-1/2 mr-8 p-8 rounded-lg">
-                <h1 className="text-lg">Ogun state</h1>
-                <p className="font-semibold text-xl py-2">&#8358;1,050,000</p>
-                <p className="text-sm">10/10/2020</p>
-              </section>
-              <section className="investment w-1/2 mr-8 p-8 rounded-lg">
-                <h1 className="text-lg">Lagos state</h1>
-                <p className="font-semibold text-xl py-2">&#8358;3,450,500</p>
-                <p className="text-sm">10/10/2020</p>
-              </section>
+            {
+              investments && investments.length === 0 && (
+                <section className="mt-6">
+                  <p>No Current investments</p>
+                </section>
+              )
+            }
+            <section className="grid grid-cols-2 justify-between p-4">
+              {
+                investments && investments.length > 0 && investments.map(investment => (
+                  <section className="investment w-full p-8 rounded-lg"
+                    key={investment.createdAt}
+                  >
+                    <h1 className="text-lg">{investment.Location.city}</h1>
+                    <p className="font-semibold text-xl py-2">
+                      {
+                        new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' })
+                          .format(investment.amountInvested)
+                      }
+                    </p>
+                    <p className="text-sm">
+                      {format(new Date(investment.createdAt), 'dd/MM/yyyy')}
+                    </p>
+                  </section>
+                ))
+              }
             </section>
           </section>
         </section>

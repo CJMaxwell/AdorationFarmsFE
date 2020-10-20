@@ -1,20 +1,58 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState, useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
+import Loader from 'react-loader-spinner';
+import format from 'date-fns/format';
+import addDays from 'date-fns/addDays';
+import axios from 'axios';
+import { notify } from 'react-notify-toast';
 
 import DashboardSidebar from './DashboardSidebar';
 import ProfileNavbar from './ProfileNavbar';
+import InvestmentContext from '../context/Investment';
 
 const Wrapper = styled.section`
 .main-section {
   background-color: ${({ theme }) => theme.colors.gray3};
   height: 100vh;
 }
-.pay-now:hover {
-  background-color: ${({ theme }) => theme.colors.green2}
+.pay-now {
+  background-image: linear-gradient(164deg,#7E1A16,#FE7A15);
+  color: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.green2};
 }
+
 `;
 
 const ScheduledPayment = () => {
+
+  const theme = useContext(ThemeContext);
+  const { investment } = useContext(InvestmentContext);
+  console.log(investment)
+  const [loading, setLoading] = useState();
+
+  const monthlyDue = investment.amount / investment.paymentPeriod;
+  const currentDate = new Date();
+
+  const pay = async (callback) => {
+    try {
+      const result = await axios.post(`${process.env.REACT_APP_BASE_URL}/investments`, {
+        duration: investment.paymentPeriod,
+        locId: investment.locId,
+        unitsPurchased: investment.unitsPurchased
+      }, {
+        headers: {
+          authorization: localStorage.getItem('token')
+        }
+      });
+
+      console.log(result.data);
+      window.location.href = result.data.paymentUrl;
+    } catch (error) {
+      callback();
+      notify.show(error.response.data.message, 'error');
+    }
+  }
+
   return (
     <Wrapper className="flex">
       <DashboardSidebar />
@@ -30,63 +68,63 @@ const ScheduledPayment = () => {
                       <th className="px-6 py-3 border-b-2 border-gray-200 text-left leading-4 tracking-wider">Due Date</th>
                       <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 tracking-wider">Description</th>
                       <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 tracking-wider">Amount</th>
-                      <th className="px-6 py-3 border-b-2 border-gray-200">Action</th>
+                      {/* <th className="px-6 py-3 border-b-2 border-gray-200">Action</th> */}
                     </tr>
                   </thead>
                   <tbody className="bg-white">
-                    <tr>
-                      <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                        <div className="text-sm leading-5 text-blue-900">10/10/2020</div>
-                      </td>
-                      <td
-                        className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        Investment payment for October, 2020
-                      </td>
-                      <td className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        &#8358;56,700
-                      </td>
-                      <td
-                        className="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                        <button className="px-5 py-2 border-gray-500 border rounded transition duration-300 pay-now hover:text-white focus:outline-none">Pay Now</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                        <div className="text-sm leading-5 text-blue-900">10/11/2020</div>
-                      </td>
-                      <td
-                        className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        Investment payment for November, 2020
-                        </td>
-                      <td
-                        className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        &#8358;56,700
-                      </td>
-                      <td className="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                        <button className="px-5 py-2 border-gray-500 border rounded transition duration-300 pay-now hover:text-white focus:outline-none">Pay Now</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                        <div className="text-sm leading-5 text-blue-900">10/12/2020</div>
-                      </td>
-                      <td
-                        className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        Investment payment for December, 2020
-                        </td>
-                      <td
-                        className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        &#8358;56,700
-                      </td>
-                      <td className="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                        <button className="px-5 py-2 border-gray-500 border rounded transition duration-300 pay-now hover:text-white focus:outline-none">Pay Now</button>
-                      </td>
-                    </tr>
+                    {
+                      Array(investment.paymentPeriod).fill('').map((_, i) => {
+                        const dueDate = addDays(currentDate, i * 30);
+
+                        return (
+                          <tr key={`installment${i}`}>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                              <div className="text-sm leading-5 text-blue-900">{format(dueDate, 'dd/MM/yyyy')}</div>
+                            </td>
+                            <td
+                              className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                              Investment payment for {format(dueDate, 'MMMM, yyyy')}.
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                              {
+                                new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' })
+                                  .format(monthlyDue)
+                              }
+                            </td>
+                          </tr>
+                        )
+                      })
+                    }
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
+          <section>
+            <section className="px-6 py-4 flex justify-center whitespace-no-wrap text-sm leading-5">
+              <button
+                className="px-5 py-4 text-xl rounded-full transition duration-300 pay-now focus:outline-none"
+                type="button"
+                onClick={() => {
+                  setLoading(true);
+                  pay(() => {
+                    setLoading(false)
+                  })
+                }}
+              >
+                {loading ? (
+                  <Loader
+                    type="TailSpin"
+                    color={theme.colors.green2}
+                    height={20}
+                    width={60}
+                  />
+                ) : (
+                    'Start Payment'
+                  )}
+              </button>
+            </section>
+          </section>
         </section>
       </main>
     </Wrapper>
