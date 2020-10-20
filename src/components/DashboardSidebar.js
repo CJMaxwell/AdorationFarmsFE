@@ -45,16 +45,14 @@ const DashboardSidebar = () => {
             </Link>
         </li>
         {/* <hr /> */}
-        <li className="flex items-center space-x-8 py-4 px-16 border-b border-white">
+        <li className="flex items-center space-x-8 py-4 px-16 border-b border-white cursor-pointer">
           <MdPayment
             size="1.5rem"
             color="#FFF"
           />
-          <Link
-            to="/scheduled-payment"
-          >
+          <span>
             Scheduled Payment
-            </Link>
+          </span>
         </li>
         <li className="flex items-center space-x-8 py-4 px-16 border-b border-white">
           <FiSettings

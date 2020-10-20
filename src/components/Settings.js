@@ -34,25 +34,25 @@ const Settings = () => {
             <div className="flex items-center input-wrap py-2">
               <input
                 className="appearance-none bg-transparent border-none w-full input-text mr-3 py-1 px-2 leading-tight focus:outline-none"
-                type="text"
-                placeholder="First Name"
-                aria-label="First name"
+                type="password"
+                placeholder="Old password"
+                aria-label="Old password"
                 required
               />
             </div>
             <div className="flex items-center input-wrap pt-8">
               <input className="appearance-none bg-transparent border-none w-full input-text mr-3 py-1 px-2 leading-tight focus:outline-none"
-                type="text"
-                placeholder="Last Name"
-                aria-label="Last name"
+                type="password"
+                placeholder="New password"
+                aria-label="New password"
                 required
               />
             </div>
             <div className="flex items-center input-wrap pt-8">
               <input className="appearance-none bg-transparent border-none w-full input-text mr-3 py-1 px-2 leading-tight focus:outline-none"
-                type="email"
-                placeholder="Email"
-                aria-label="Valid email address"
+                type="password"
+                placeholder="Repeat password"
+                aria-label="Repeat password"
                 required
               />
             </div>
@@ -61,7 +61,7 @@ const Settings = () => {
                 type="submit"
                 className="uppercase text-white rounded-full px-8 py-4 text-xl signup focus:outline-none"
               >
-                Update Profile
+                Update Password
           </button>
             </section>
           </form>

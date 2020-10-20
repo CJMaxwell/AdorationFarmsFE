@@ -166,7 +166,6 @@ const Signup = () => {
                     type="text"
                     placeholder="Referal Code"
                     aria-label="Enter your referal code"
-                    required
                   />
                 </div>
                 <section className="flex items-center justify-center mt-16">
