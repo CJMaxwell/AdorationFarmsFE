@@ -27,7 +27,6 @@ const ScheduledPayment = () => {
 
   const theme = useContext(ThemeContext);
   const { investment } = useContext(InvestmentContext);
-  console.log(investment)
   const [loading, setLoading] = useState();
 
   const monthlyDue = investment.amount / investment.paymentPeriod;
@@ -45,7 +44,6 @@ const ScheduledPayment = () => {
         }
       });
 
-      console.log(result.data);
       window.location.href = result.data.paymentUrl;
     } catch (error) {
       callback();
