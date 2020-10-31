@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { BiUserCircle } from 'react-icons/bi';
+import { Squash as Hamburger } from 'hamburger-react';
 
 import useProfile from '../hooks/useProfile';
 
@@ -19,12 +20,15 @@ const MenuBar = styled.nav`
     color: ${({ theme }) => theme.colors.green2};
     border: 1px solid ${({ theme }) => theme.colors.green2};
   }
+
+  
 `;
+
 
 const Navbar = () => {
 
+  const [isOpen, setOpen] = useState(false)
   const profile = useProfile();
-  // console.log(profile);
 
   return (
     <MenuBar className="flex items-center bg-white justify-between uppercase flex-wrap py-12 px-24">
@@ -35,23 +39,21 @@ const Navbar = () => {
         </div>
       </Link>
       <div className="block lg:hidden">
-        <button className="flex items-center px-3 py-2 border rounded text-black border-black hover:text-hover">
-          <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /></svg>
-        </button>
+        <Hamburger toggled={isOpen} toggle={setOpen} />
       </div>
-      <div className="w-full block lg:flex lg:items-center lg:w-auto">
+      <div className="w-full lg:flex lg:items-center lg:w-auto hidden">
         <div className="text-sm lg:flex-grow">
-          <Link to="/about" className="block mt-4 text-lg lg:inline-block lg:mt-0 font-semibold text-color hover:text-white mr-4">
+          <Link to="/about" onClick={() => setOpen(!isOpen)} className="block mt-4 text-lg lg:inline-block lg:mt-0 font-semibold text-color hover:text-white mr-4">
             About Us
             </Link>
           <a
             href="/#our-process"
             className="block mt-4 text-lg lg:inline-block lg:mt-0 font-semibold text-color hover:text-white mr-4">
             Our Process
-          </a>
+              </a>
           {
             !profile && (
-              <Link to="/login" className="block mt-4 text-lg lg:inline-block lg:mt-0 font-semibold text-color mr-4 hover:text-white">
+              <Link to="/login" onClick={() => setOpen(!isOpen)} className="block mt-4 text-lg lg:inline-block lg:mt-0 font-semibold text-color mr-4 hover:text-white">
                 Sign in
               </Link>
             )
@@ -60,7 +62,7 @@ const Navbar = () => {
         {
           !profile && (
             <div>
-              <Link to="/signup" className="inline-block text-lg px-8 py-4 leading-none rounded-full signup-bg font-semibold  text-white hover:border-transparent mt-4 lg:mt-0">
+              <Link to="/signup" onClick={() => setOpen(!isOpen)} className="inline-block text-lg px-8 py-4 leading-none rounded-full signup-bg font-semibold  text-white hover:border-transparent mt-4 lg:mt-0">
                 Sign up
               </Link>
             </div>
@@ -76,6 +78,48 @@ const Navbar = () => {
           )
         }
       </div>
+      {
+        isOpen && (
+          <div className="w-full block">
+            <div className="text-sm lg:flex-grow">
+              <Link to="/about" onClick={() => setOpen(!isOpen)} className="block mt-4 text-lg lg:mt-0 font-semibold text-color hover:text-white mr-4">
+                About Us
+            </Link>
+              <a
+                href="/#our-process"
+                className="block mt-4 text-lg lg:mt-0 font-semibold text-color hover:text-white mr-4">
+                Our Process
+              </a>
+              {
+                !profile && (
+                  <Link to="/login" onClick={() => setOpen(!isOpen)} className="block mt-4 text-lg lg:mt-0 font-semibold text-color mr-4 hover:text-white">
+                    Sign in
+                  </Link>
+                )
+              }
+            </div>
+            {
+              !profile && (
+                <div>
+                  <Link to="/signup" onClick={() => setOpen(!isOpen)} className="inline-block text-lg px-8 py-4 leading-none rounded-full signup-bg font-semibold  text-white hover:border-transparent mt-4">
+                    Sign up
+              </Link>
+                </div>
+              )
+            }
+            {
+              profile && (
+                <Link to="/dashboard" className="flex space-x-4 items-center cursor-pointer">
+                  <BiUserCircle
+                    size="2.5rem"
+                  />
+                </Link>
+              )
+            }
+          </div>
+
+        )
+      }
     </MenuBar>
   )
 }

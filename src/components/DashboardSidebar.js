@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -7,9 +7,15 @@ import { FiSettings } from 'react-icons/fi';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { MdPayment } from 'react-icons/md';
 
+import SidebarContext from '../context/Sidebar';
+
 const Wrapper = styled.aside`
   background-image: linear-gradient(164deg,#90cc41,#21954a);
-  height: 100vh;
+  height:100vh;
+
+  &.show {
+    opacity:1;
+  }
 `;
 const Logo = styled.section`
   height: 20rem;
@@ -20,6 +26,8 @@ const Logo = styled.section`
 `;
 
 const DashboardSidebar = () => {
+
+  const { isOpen } = useContext(SidebarContext);
   const history = useHistory();
 
   const handleClick = () => {
@@ -28,7 +36,7 @@ const DashboardSidebar = () => {
   }
 
   return (
-    <Wrapper className="w-1/4 pb-8 text-white">
+    <Wrapper className={`pb-8 text-white lg:w-1/4 lg:block lg:left-0 fixed opacity-0 lg:opacity-100 transition-opacity ease-in-out duration-500 ${isOpen ? 'show' : ''} lg:relative`}>
       <Link to="/">
         <Logo />
       </Link>

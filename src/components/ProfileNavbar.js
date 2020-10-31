@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BiUserCircle } from 'react-icons/bi';
 import styled from 'styled-components';
 import format from 'date-fns/format';
+import { Squash as Hamburger } from 'hamburger-react';
 
 import useProfile from '../hooks/useProfile';
+import SidebarContext from '../context/Sidebar';
+
 
 const Wrapper = styled.nav`
   background-color: ${({ theme }) => theme.colors.gray3};
@@ -14,6 +17,7 @@ const Wrapper = styled.nav`
 
 const ProfileNavbar = () => {
 
+  const { isOpen, setOpen } = useContext(SidebarContext);
   const profile = useProfile();
 
   return (
@@ -35,6 +39,9 @@ const ProfileNavbar = () => {
               <BiUserCircle
                 size="2.5rem"
               />
+              <span className="block lg:hidden">
+                <Hamburger toggled={isOpen} toggle={setOpen} />
+              </span>
             </li>
           </ul>
         )
