@@ -9,7 +9,7 @@ const Wrapper = styled.footer`
 
 const Footer = () => {
   return (
-    <Wrapper className="sm:block lg:flex lg:items-start lg:space-x-24 lg:pt-24 lg:pb-12 sm:mt-10">
+    <Wrapper className="sm:block lg:flex lg:items-start lg:space-x-24 lg:pt-24 py-12 sm:mt-10">
       <section>
         <h1 className="font-semibold text-xl">Adoration Farms</h1>
         <p className="mt-2">
