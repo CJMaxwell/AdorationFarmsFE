@@ -60,10 +60,10 @@ const Invest = () => {
   return (
     <Wrapper className="flex">
       <DashboardSidebar />
-      <main className="w-3/4 main-section">
+      <main className="w-full lg:w-3/4 main-section">
         <ProfileNavbar />
-        <section className="flex">
-          <section className="w-1/2 my-8 ml-8 mr-4 p-12 bg-white shadow-lg rounded-lg">
+        <section className="block lg:flex">
+          <section className="lg:w-1/2 m-8 lg:my-8 lg:ml-8 lg:mr-4 p-12 bg-white shadow-lg rounded-lg">
             <section className="text-center">
               <h1 className="text-lg font-semibold">
                 New Investment
@@ -238,7 +238,7 @@ const Invest = () => {
                 )}
             </Formik>
           </section>
-          <section className="w-1/2 my-8 ml-4 mr-8 p-12 bg-white shadow-lg rounded-lg">
+          <section className="lg:w-1/2 m-8 lg:my-8 lg:ml-4 lg:mr-8 p-12 bg-white shadow-lg rounded-lg">
             <section className="text-center">
               <h1 className="font-semibold text-lg">Palm plantation</h1>
             </section>

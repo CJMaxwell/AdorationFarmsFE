@@ -54,19 +54,18 @@ const ScheduledPayment = () => {
   return (
     <Wrapper className="flex">
       <DashboardSidebar />
-      <main className="w-3/4 main-section">
+      <main className="w-full lg:w-3/4 main-section">
         <ProfileNavbar />
-        <section className="px-24 pt-8">
-          <div className="py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 pr-10 lg:px-8">
+        <section className="px-8 lg:px-24 pt-8">
+          <div className="py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:pr-10 lg:px-8">
             <div className="align-middle rounded-lg inline-block w-full py-4 overflow-hidden bg-white shadow-lg px-12">
               <div className="align-middle inline-block min-w-full overflow-hidden px-8 pt-4 pb-8 rounded-lg">
-                <table className="min-w-full">
+                <table className="min-w-full table-auto">
                   <thead>
                     <tr>
-                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left leading-4 tracking-wider">Due Date</th>
-                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 tracking-wider">Description</th>
-                      <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 tracking-wider">Amount</th>
-                      {/* <th className="px-6 py-3 border-b-2 border-gray-200">Action</th> */}
+                      <th className="w-1/3 px-6 py-3 border-b-2 border-gray-200 text-left leading-4 tracking-wider">Due Date</th>
+                      <th className="w-1/3 px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 tracking-wider">Description</th>
+                      <th className="w-1/3 px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 tracking-wider">Amount</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white">

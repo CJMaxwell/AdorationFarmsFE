@@ -49,7 +49,7 @@ const Dashboard = () => {
               <section className="mt-16 text-center">
                 <button
                   type="submit"
-                  className="uppercase text-white rounded-full px-8 py-4 text-xl invest-now focus:outline-none"
+                  className="uppercase z-50 text-white rounded-full px-8 py-4 text-xl invest-now focus:outline-none"
                   onClick={handleClick}
                 >
                   Invest Now
