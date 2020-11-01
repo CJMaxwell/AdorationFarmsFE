@@ -34,7 +34,7 @@ const Dashboard = () => {
         <main className="w-full lg:w-3/4 main-section">
           <ProfileNavbar />
           <section className="block lg:flex">
-            <section className="lg:w-1/2 m-8 lg:my-8 lg:ml-8 lg:mr-4 p-12 bg-white shadow-lg rounded-lg">
+            <section className="lg:w-1/2 m-8 lg:my-8 lg:ml-8 lg:mr-4 p-8 lg:p-12 bg-white shadow-lg rounded-lg">
               <section className="text-center">
                 <h1 className="font-semibold text-lg">Palm plantation</h1>
               </section>
@@ -56,7 +56,7 @@ const Dashboard = () => {
             </button>
               </section>
             </section>
-            <section className="lg:w-1/2 m-8 lg:my-8 lg:ml-4 lg:mr-8 p-12 bg-white shadow-lg rounded-lg">
+            <section className="lg:w-1/2 m-8 lg:my-8 lg:ml-4 lg:mr-8 p-4 lg:p-12 bg-white shadow-lg rounded-lg">
               <section className="text-center">
                 <h1 className="font-semibold text-lg">Current Investments</h1>
               </section>
@@ -67,7 +67,7 @@ const Dashboard = () => {
                   </section>
                 )
               }
-              <section className="block lg:grid lg:grid-cols-2 lg:justify-between p-4 space-y-8 lg:space-y-0">
+              <section className="block lg:grid lg:grid-cols-2 lg:justify-between p-4 space-y-6 lg:space-y-0">
                 {
                   investments && investments.length > 0 && investments.map(investment => (
                     <section className="investment w-full p-8 rounded-lg"

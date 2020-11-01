@@ -34,7 +34,7 @@ const About = () => {
       </section>
 
       <section className="mission-vision lg:flex lg:justify-center lg:items-center lg:space-x-20 p-8 lg:p-24 sm:block">
-        <section className="bg-white p-20 border border-white rounded-md">
+        <section className="bg-white px-8 py-20 lg:p-20 border border-white rounded-md">
           <h1 className="font-semibold text-4xl title">Vision</h1>
           <section className="pt-4">
             <article>
@@ -43,7 +43,7 @@ const About = () => {
           </article>
           </section>
         </section>
-        <section className="bg-white p-20 border border-white rounded-md lg:mt-0 mt-8">
+        <section className="bg-white px-8 py-20 lg:p-20 border border-white rounded-md lg:mt-0 mt-8">
           <h1 className="font-semibold text-4xl title">Mission</h1>
           <section className="pt-4">
             <article>
