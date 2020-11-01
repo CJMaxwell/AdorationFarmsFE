@@ -33,35 +33,35 @@ function App() {
             <Route exact path="/">
               <Navbar />
               <Home />
-              <main className="container px-24">
+              <main className="container px-8 lg:px-24">
                 <Footer />
               </main>
             </Route>
             <Route path="/about">
               <Navbar />
               <About />
-              <main className="container px-24">
+              <main className="container px-8 lg:px-24">
                 <Footer />
               </main>
             </Route>
             <Route path="/login">
               <Navbar />
               <Login />
-              <main className="container px-24">
+              <main className="container px-8 lg:px-24">
                 <Footer />
               </main>
             </Route>
             <Route path="/signup">
               <Navbar />
               <Signup />
-              <main className="container px-24">
+              <main className="container px-8 lg:px-24">
                 <Footer />
               </main>
             </Route>
             <Route path="/terms-conditions">
               <Navbar />
               <TermsCondition />
-              <main className="container px-24">
+              <main className="container px-8 lg:px-24">
                 <Footer />
               </main>
             </Route>

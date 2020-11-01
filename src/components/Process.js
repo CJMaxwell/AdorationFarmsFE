@@ -32,7 +32,7 @@ const Process = () => {
 
   return (
     <Wrapper id="our-process">
-      <section className="wrapper px-24 text-white py-24">
+      <section className="wrapper px-8 lg:px-24 text-white py-24">
         <section className="flex justify-center pb-10">
           <h1 className="font-semibold text-xl uppercase">
             How it works
@@ -108,9 +108,9 @@ const Process = () => {
           </CustomLink>
         </section>
       </section>
-      <section className="grid grid-cols-2 gap-16 product">
+      <section className="block lg:grid lg:grid-cols-2 lg:gap-16 product">
         <section className="oil-kernel" />
-        <section className="pr-24 pt-16">
+        <section className="px-8 lg:px-0 pr-24 pt-16">
           <h1 className="font-semibold text-xl">Adoration Palm Oil</h1>
           <p className="pt-6 text-justify">
             Our amazing palm oil from Adoration Farms helps in decreasing cholesterol levels, reducing oxidative stress,

@@ -22,12 +22,12 @@ const Wrapper = styled.section`
 const Banner = () => {
   return (
     <Wrapper>
-      <section className="text-white w-3/5 pl-24">
+      <section className="text-white sm:w-1/2 lg:w-3/5 pl-12 lg:pl-24">
         <section className="content">
-          <h1 className="font-semibold big-text uppercase">
+          <h1 className="font-semibold text-xl lg:text-6xl uppercase">
             Bridging the Gap
           </h1>
-          <p className="text-xl pt-4">
+          <p className="lg:text-xl pt-4">
             Adoration Farms is a leading agritech company in Nigeria duly registered with
             CAC focused on helping individual manage farm Oil Palm plantation thereby taking off
             the stress of farming activities from farm owners and producing quality palm oil for the
