@@ -67,7 +67,7 @@ const Dashboard = () => {
                   </section>
                 )
               }
-              <section className="grid grid-cols-2 justify-between p-4">
+              <section className="block lg:grid lg:grid-cols-2 lg:justify-between p-4 space-y-8 lg:space-y-0">
                 {
                   investments && investments.length > 0 && investments.map(investment => (
                     <section className="investment w-full p-8 rounded-lg"

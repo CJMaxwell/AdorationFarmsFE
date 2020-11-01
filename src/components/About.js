@@ -19,7 +19,7 @@ const Wrapper = styled.section`
 const About = () => {
   return (
     <Wrapper>
-      <section className="p-24 about lg:flex sm:block">
+      <section className="p-8 lg:p-24 about lg:flex sm:block">
         <section className="lg:w-2/5 sm:w-full">
           <h1 className="font-semibold text-4xl title">About Us</h1>
         </section>

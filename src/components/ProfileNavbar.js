@@ -24,10 +24,10 @@ const ProfileNavbar = () => {
     <Wrapper className="dashboard-nav py-4">
       {
         profile && (
-          <ul className="flex items-center justify-between px-24">
+          <ul className="flex items-center justify-between px-8 lg:px-24">
             <li>
               {
-                format(new Date(), 'MMM. d, yyyy H:mm')
+                format(new Date(), 'MMM. d, yyyy')
               }
             </li>
             <li className="flex space-x-4 items-center cursor-pointer">
