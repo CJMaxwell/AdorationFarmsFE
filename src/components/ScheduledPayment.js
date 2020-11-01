@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import Loader from 'react-loader-spinner';
 import format from 'date-fns/format';
 import addDays from 'date-fns/addDays';
@@ -20,7 +21,12 @@ const Wrapper = styled.section`
   color: ${({ theme }) => theme.colors.white};
   border: 1px solid ${({ theme }) => theme.colors.green2};
 }
-
+.text-blue-900 {
+  color: #000;
+}
+.responsiveTable tbody tr {
+  border: 1px solid ${({ theme }) => theme.colors.gray3};
+}
 `;
 
 const ScheduledPayment = () => {
@@ -60,7 +66,7 @@ const ScheduledPayment = () => {
           <div className="py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:pr-10 lg:px-8">
             <div className="align-middle rounded-lg inline-block w-full py-4 overflow-hidden bg-white shadow-lg px-12">
               <div className="align-middle inline-block min-w-full overflow-hidden px-8 pt-4 pb-8 rounded-lg">
-                <table className="min-w-full table-auto">
+                {/* <table className="min-w-full table-auto">
                   <thead>
                     <tr>
                       <th className="w-1/3 px-6 py-3 border-b-2 border-gray-200 text-left leading-4 tracking-wider">Due Date</th>
@@ -93,7 +99,43 @@ const ScheduledPayment = () => {
                       })
                     }
                   </tbody>
-                </table>
+                </table> */}
+
+                <Table>
+                  <Thead>
+                    <Tr>
+                      <Th className="px-6 py-3 border-b-2 border-gray-200 text-left leading-4 tracking-wider">Due Date</Th>
+                      <Th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 tracking-wider">Description</Th>
+                      <Th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 tracking-wider">Amount</Th>
+                    </Tr>
+                  </Thead>
+                  <Tbody className="bg-white">
+                    {
+                      Array(investment.paymentPeriod).fill('').map((_, i) => {
+                        const dueDate = addDays(currentDate, i * 30);
+
+                        return (
+                          <Tr key={`installment${i}`}>
+                            <Td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                              <div className="text-sm leading-5 text-blue-900">{format(dueDate, 'dd/MM/yyyy')}</div>
+                            </Td>
+                            <Td
+                              className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                              Investment payment for {format(dueDate, 'MMMM, yyyy')}.
+                      </Td>
+                            <Td
+                              className="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                              {
+                                new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' })
+                                  .format(monthlyDue)
+                              }
+                            </Td>
+                          </Tr>
+                        )
+                      })
+                    }
+                  </Tbody>
+                </Table>
               </div>
             </div>
           </div>
