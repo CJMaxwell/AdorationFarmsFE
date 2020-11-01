@@ -63,9 +63,9 @@ const ScheduledPayment = () => {
       <main className="w-full lg:w-3/4 main-section">
         <ProfileNavbar />
         <section className="px-8 lg:px-24 pt-8">
-          <div className="py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:pr-10 lg:px-8">
-            <div className="align-middle rounded-lg inline-block w-full py-4 overflow-hidden bg-white shadow-lg px-12">
-              <div className="align-middle inline-block min-w-full overflow-hidden px-8 pt-4 pb-8 rounded-lg">
+          <div className="py-2 overflow-x-auto sm:-mx-6 px-0 lg:-mx-8 lg:pr-10 lg:px-8">
+            <div className="align-middle rounded-lg inline-block w-full py-4 overflow-hidden bg-white shadow-lg px-0 lg:px-12">
+              <div className="align-middle inline-block min-w-full overflow-hidden px-0 lg:px-8 pt-4 pb-8 rounded-lg">
                 {/* <table className="min-w-full table-auto">
                   <thead>
                     <tr>
