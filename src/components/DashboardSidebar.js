@@ -19,11 +19,12 @@ const Wrapper = styled.aside`
   }
 `;
 const Logo = styled.section`
-  height: 20rem;
-  background: url('/img/adoration-farm.png');
+  height: 8rem;
+  background: url('/img/logo2.svg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 80%;
+  margin-top: 2rem;
 `;
 
 const DashboardSidebar = () => {

@@ -38,14 +38,11 @@ const Process = () => {
             How it works
           </h1>
         </section>
-        <section className="sm:block lg:flex lg:items-start lg:justify-between lg:space-x-6">
-          <section>
-            <section className="flex items-center space-x-8">
+        <section className="sm:block lg:flex lg:items-start lg:justify-between lg:space-x-8">
+          <section className="text-center">
+            <section className="flex items-center justify-center">
               <div>
-                <span className="font-semibold text-xl">1.</span>
-              </div>
-              <div>
-                <img src="/img/user-new-lg.02b06d7c.svg" alt="Create an account" />
+                <img src="/img/user.svg" alt="Create an account" className="h-40 lg:h-auto" />
               </div>
             </section>
             <h1 className="font-semibold text-xl">Create an Account</h1>
@@ -54,13 +51,10 @@ const Process = () => {
               with the globe with just a click.
             </p>
           </section>
-          <section>
-            <section className="flex items-center space-x-8">
+          <section className="text-center">
+            <section className="flex items-center justify-center">
               <div>
-                <span className="font-semibold text-xl">2.</span>
-              </div>
-              <div>
-                <img src="/img/farm-new-lg.c6b714ef.svg" alt="Create an account" />
+                <img src="/img/farm.svg" alt="Select your plot" className="h-40 lg:h-auto" />
               </div>
             </section>
             <h1 className="font-semibold text-xl">Select your Plot</h1>
@@ -69,13 +63,10 @@ const Process = () => {
               help you manage the farm from clearing to harvesting.
             </p>
           </section>
-          <section className="">
-            <section className="flex items-center space-x-8">
+          <section className="text-center">
+            <section className="flex items-center justify-center">
               <div>
-                <span className="font-semibold text-xl">3.</span>
-              </div>
-              <div>
-                <img src="/img/updates-new-lg.b9c4e918.svg" alt="Create an account" />
+                <img src="/img/updates.svg" alt="Get updates" className="h-40 lg:h-auto" />
               </div>
             </section>
             <h1 className="font-semibold text-xl">Get Updates</h1>
@@ -84,13 +75,10 @@ const Process = () => {
               progress of your farm.
           </p>
           </section>
-          <section className="">
-            <section className="flex items-center space-x-8">
+          <section className="text-center">
+            <section className="flex items-center justify-center">
               <div>
-                <span className="font-semibold text-xl">4.</span>
-              </div>
-              <div>
-                <img src="/img/returns-new-lg.324ef96c.svg" alt="Create an account" />
+                <img src="/img/returns.svg" alt="Enjoy returns" className="h-40 lg:h-auto" />
               </div>
             </section>
             <h1 className="font-semibold text-xl">Enjoy Revenue</h1>
