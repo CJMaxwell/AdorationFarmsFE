@@ -34,7 +34,9 @@ const Banner = () => {
             market.
           </p>
           <section className="flex pt-10 uppercase">
-            <CustomLink>
+            <CustomLink
+              href="#contact-us"
+            >
               Contact Us
           </CustomLink>
           </section>
