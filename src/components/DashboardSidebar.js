@@ -14,7 +14,8 @@ const Wrapper = styled.aside`
   height:100vh;
 
   &.show {
-    opacity:1;
+    display: block;
+    z-index: 100;
   }
 `;
 const Logo = styled.section`
@@ -36,7 +37,7 @@ const DashboardSidebar = () => {
   }
 
   return (
-    <Wrapper className={`pb-8 text-white lg:w-1/4 lg:block lg:left-0 fixed opacity-0 lg:opacity-100 transition-opacity ease-in-out duration-500 ${isOpen ? 'show' : ''} lg:relative`}>
+    <Wrapper className={`pb-8 text-white lg:w-1/4 lg:block lg:left-0 fixed hidden ${isOpen ? 'show' : ''} lg:relative`}>
       <Link to="/">
         <Logo />
       </Link>

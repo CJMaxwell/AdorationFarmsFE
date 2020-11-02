@@ -35,7 +35,7 @@ const Login = () => {
 
   return (
     <Wrapper>
-      <section className="px-24 flex justify-center">
+      <section className="px-8 lg:px-24 flex justify-center">
         <Formik
           initialValues={{
             email: '',
