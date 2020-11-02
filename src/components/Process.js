@@ -110,7 +110,7 @@ const Process = () => {
       </section>
       <section className="block lg:grid lg:grid-cols-2 lg:gap-16 product">
         <section className="oil-kernel" />
-        <section className="px-8 lg:px-0 pr-24 pt-16">
+        <section className="px-8 lg:px-0 pr-24 py-16">
           <h1 className="font-semibold text-xl">Adoration Palm Oil</h1>
           <p className="pt-6 text-justify">
             Our amazing palm oil from Adoration Farms helps in decreasing cholesterol levels, reducing oxidative stress,

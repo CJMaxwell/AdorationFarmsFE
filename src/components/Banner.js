@@ -24,7 +24,7 @@ const Banner = () => {
     <Wrapper>
       <section className="text-white sm:w-1/2 lg:w-3/5 pl-12 lg:pl-24">
         <section className="content">
-          <h1 className="font-semibold text-xl lg:text-6xl uppercase">
+          <h1 className="font-semibold text-3xl lg:text-6xl uppercase">
             Bridging the Gap
           </h1>
           <p className="lg:text-xl pt-4">
