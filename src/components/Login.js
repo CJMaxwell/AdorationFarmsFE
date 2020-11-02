@@ -73,7 +73,7 @@ const Login = () => {
             isSubmitting,
             /* and other goodies */
           }) => (
-              <form className="w-full max-w-2xl" onSubmit={handleSubmit}>
+              <form className="w-full max-w-4xl" onSubmit={handleSubmit}>
                 <div className="flex items-center input-wrap pt-8">
                   <input
                     className="appearance-none bg-transparent border-none w-full input-text mr-3 py-1 px-2 leading-tight focus:outline-none"

@@ -79,7 +79,7 @@ const Navbar = () => {
       </div>
       {
         isOpen && (
-          <div className="w-full block">
+          <div className="w-full block lg:hidden">
             <div className="text-sm lg:flex-grow">
               <Link to="/about" onClick={() => setOpen(!isOpen)} className="block mt-4 text-lg lg:mt-0 font-semibold text-color hover:text-white mr-4">
                 About Us
