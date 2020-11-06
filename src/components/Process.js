@@ -47,7 +47,7 @@ const Process = () => {
             </section>
             <h1 className="font-semibold text-xl">Create an Account</h1>
             <p className="mt-2">
-              Be part of our community constantly seeking the produce and distribute health palm oil
+              Be part of our community constantly seeking the produce and distribute healthy palm oil
               with the globe with just a click.
             </p>
           </section>
