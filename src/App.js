@@ -18,6 +18,8 @@ import TermsCondition from './components/TermsCondition';
 import Footer from './components/Footer';
 import Dashboard from './components/Dashboard';
 import Settings from './components/Settings';
+import ResetPassword from './components/ResetPassword';
+import ForgotPassword from './components/ForgotPassword';
 import ScheduledPayment from './components/ScheduledPayment';
 import Invest from './components/Invest';
 import AuthenticatedRoute from './components/AuthenticatedRoute';
@@ -61,6 +63,20 @@ function App() {
             <Route path="/terms-conditions">
               <Navbar />
               <TermsCondition />
+              <main className="container px-8 lg:px-24">
+                <Footer />
+              </main>
+            </Route>
+            <Route path="/forgot-password">
+              <Navbar />
+              <ForgotPassword />
+              <main className="container px-8 lg:px-24">
+                <Footer />
+              </main>
+            </Route>
+            <Route path="/reset-password">
+              <Navbar />
+              <ResetPassword />
               <main className="container px-8 lg:px-24">
                 <Footer />
               </main>
