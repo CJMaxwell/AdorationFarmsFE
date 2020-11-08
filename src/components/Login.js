@@ -123,6 +123,11 @@ const Login = () => {
       </section>
       <section className="flex justify-center items-center pt-6">
         <section>
+          <Link className="signup-link" to="/forgot-password">Forgot password?</Link>
+        </section>
+      </section>
+      <section className="flex justify-center items-center pt-6">
+        <section>
           <span className="pr-2">Don't have an account?</span>
           <Link className="uppercase signup-link" to="/signup">Sign up</Link>
         </section>
