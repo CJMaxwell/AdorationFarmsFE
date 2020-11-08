@@ -31,7 +31,7 @@ const Wrapper = styled.section`
 const Settings = () => {
 
   const theme = useContext(ThemeContext);
-  const updatePassword = useUpdate();
+  const { updatePassword } = useUpdate();
 
   return (
     <SidebarProvider>

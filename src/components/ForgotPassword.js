@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import axios from 'axios';
 import { Formik } from 'formik';
 import Loader from 'react-loader-spinner';
-import { notify } from 'react-notify-toast';
-import { useHistory } from 'react-router-dom';
+
+import useUpdate from '../hooks/useUpdate';
 
 
 const Wrapper = styled.section`
@@ -30,7 +29,8 @@ const Wrapper = styled.section`
 const ForgotPassword = () => {
 
   const theme = useContext(ThemeContext);
-  const history = useHistory();
+
+  const { initiatePasswordReset } = useUpdate();
 
   return (
     <Wrapper>
@@ -51,16 +51,8 @@ const ForgotPassword = () => {
             return errors;
           }}
           onSubmit={async (values, { setSubmitting }) => {
-            try {
-              const result = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/login`, values);
-              if (result.status === 200) {
-                localStorage.setItem('token', `Bearer ${result.data.token}`);
-                history.push('/dashboard');
-              }
-            } catch (error) {
-              notify.show(error.response.data.message, 'error');
-            }
 
+            initiatePasswordReset(values);
           }}
         >
           {({
