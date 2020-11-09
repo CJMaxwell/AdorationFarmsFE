@@ -35,7 +35,7 @@ const Footer = () => {
           </li>
         </ul>
       </section>
-      <section className="w-full lg:mt-0 sm:mt-10" id="contact-us">
+      <section className="w-full lg:mt-0 mt-10" id="contact-us">
         <h1 className="font-semibold text-xl">Contact Us</h1>
         <p className="mt-2">
           18, Olugba-Ilogbo,
@@ -43,7 +43,7 @@ const Footer = () => {
           Ogun State.
         </p>
       </section>
-      <section className="w-full lg:mt-0 sm:mt-10">
+      <section className="w-full lg:mt-0 mt-10">
         <h1 className="font-semibold text-xl">Quick Links</h1>
         <ul className="mt-2">
           <li>
