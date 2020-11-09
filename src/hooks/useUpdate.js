@@ -25,17 +25,19 @@ const useUpdate = () => {
     }
   }
 
-  const initiatePasswordReset = (payload) => {
+  const initiatePasswordReset = (payload, callback) => {
     axios.post(`${process.env.REACT_APP_BASE_URL}/auth/forgot-password`, payload)
       .then(response => {
         notify.show(response.data.message, 'success');
       })
       .catch(err => {
         notify.show(err.response.data.message, 'error');
+      }).finally(() => {
+        callback()
       })
   }
 
-  const passwordReset = (payload) => {
+  const passwordReset = (payload, callback) => {
     axios.post(`${process.env.REACT_APP_BASE_URL}/auth/reset-password`, payload)
       .then(response => {
         notify.show(response.data.message, 'success');
@@ -43,6 +45,7 @@ const useUpdate = () => {
       })
       .catch(err => {
         notify.show(err.response.data.message, 'error');
+        callback();
       })
   }
 

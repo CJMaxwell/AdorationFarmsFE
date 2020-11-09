@@ -45,13 +45,12 @@ const ResetPassword = () => {
             newPassword: '',
             confirmPassword: ''
           }}
-          onSubmit={async (values, { setSubmitting }) => {
+          onSubmit={(values, { resetForm }) => {
 
             passwordReset({
               ...values,
               token: parsed.token
-            });
-
+            }, () => resetForm());
           }}
         >
           {({

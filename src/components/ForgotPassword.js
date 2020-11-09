@@ -50,9 +50,8 @@ const ForgotPassword = () => {
             }
             return errors;
           }}
-          onSubmit={async (values, { setSubmitting }) => {
-
-            initiatePasswordReset(values);
+          onSubmit={(values, { resetForm }) => {
+            initiatePasswordReset(values, () => resetForm());
           }}
         >
           {({
@@ -82,16 +81,19 @@ const ForgotPassword = () => {
                     className="uppercase text-white rounded-full px-8 py-4 text-xl signup focus:outline-none"
                     type="submit"
                     disabled={isSubmitting}
-                  >{isSubmitting ? (
-                    <Loader
-                      type="TailSpin"
-                      color={theme.colors.green2}
-                      height={20}
-                      width={60}
-                    />
-                  ) : (
-                      'Reset Password'
-                    )}
+                  >
+                    {
+                      isSubmitting ? (
+                        <Loader
+                          type="TailSpin"
+                          color={theme.colors.green2}
+                          height={20}
+                          width={60}
+                        />
+                      ) : (
+                          'Reset Password'
+                        )
+                    }
                   </button>
                 </section>
               </form>
