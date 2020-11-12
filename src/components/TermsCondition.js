@@ -2,7 +2,7 @@ import React from 'react';
 
 const TermsCondition = () => {
   return (
-    <section className="px-24">
+    <section className="px-8 lg:px-24">
       <article>
         <h1 className="font-semibold text-xl pb-6">Terms and Conditions</h1>
         Please read these Terms and Conditions, which set forth the legally binding terms and conditions
