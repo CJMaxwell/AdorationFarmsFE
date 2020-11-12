@@ -47,8 +47,8 @@ const Process = () => {
             </section>
             <h1 className="font-semibold text-xl">Create an Account</h1>
             <p className="mt-2">
-              Be part of our community constantly seeking the produce and distribute healthy palm oil
-              with the globe with just a click.
+              You just a click away from owning a farm, producing, processing and
+              distributing health palm oil and palm produce with the globe.
             </p>
           </section>
           <section className="text-center">
@@ -59,8 +59,8 @@ const Process = () => {
             </section>
             <h1 className="font-semibold text-xl">Select your Plot</h1>
             <p className="mt-2">
-              Select the number acres of farmland that you would love to grow palm trees on. We
-              help you manage the farm from clearing to harvesting.
+              How many acres of farmland would you like to grow palm trees on? You get to choose
+              and we’ll help you manage the farm from clearing to harvesting.
             </p>
           </section>
           <section className="text-center">
@@ -71,8 +71,8 @@ const Process = () => {
             </section>
             <h1 className="font-semibold text-xl">Get Updates</h1>
             <p className="mt-2">
-              We keep you posted with realtime update on your personalized dashboard and emails on the
-              progress of your farm.
+              We keep you posted with real time update on your personalized dashboard
+              and send you emails on the progress of your farm.
           </p>
           </section>
           <section className="text-center">
@@ -84,7 +84,7 @@ const Process = () => {
             <h1 className="font-semibold text-xl">Enjoy Revenue</h1>
             <p className="mt-2">
               At maturity, you can either take charge of harvesting your farm and processing proceeds
-              or leaving to us to manage and pay returns.
+              or leave to us to manage and pay you returns.
             </p>
           </section>
         </section>
@@ -100,10 +100,12 @@ const Process = () => {
         <section className="oil-kernel" />
         <section className="px-8 lg:px-0 pr-24 py-16">
           <h1 className="font-semibold text-xl">Adoration Palm Oil</h1>
-          <p className="pt-6 text-justify">
-            Our amazing palm oil from Adoration Farms helps in decreasing cholesterol levels, reducing oxidative stress,
-            boosting brain health, slowing the progression of heart disease, increasing vitamin A status,
-            and improving skin and hair health. This is because they are processed with no addictives.
+          <p className="pt-6">
+            Palm Oil from Adoration Farms is produced using the best methods and materials.
+            We are all about the detail and we pay close attention from the seed up.
+            Using the best available technology, we produce palm oil and palm produce without additives.
+            Our Palm oil help in decreasing cholesterol levels, reducing oxidative stress, boosting brain health,
+            slowing the progression of heart disease, increasing vitamin A status, and improving skin and hair health.
         </p>
         </section>
       </section>

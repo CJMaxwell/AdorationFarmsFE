@@ -28,16 +28,16 @@ const Banner = () => {
             Bridging the Gap
           </h1>
           <p className="lg:text-xl pt-4">
-            Adoration Farms is a leading agritech company in Nigeria duly registered with
-            CAC focused on helping individual manage farm Oil Palm plantation thereby taking off
-            the stress of farming activities from farm owners and producing quality palm oil for the
-            market.
+            The global palm oil market is worth hundreds of millions of dollars every year.
+            We help individuals acquire &amp; manage Oil Palm plantations thereby taking off the 
+            stress of farming activities from farm owners, increasing their returns and producing 
+            quality palm oil for the market using the latest available technology and methods.
           </p>
           <section className="flex pt-10 uppercase">
             <CustomLink
               href="#contact-us"
             >
-              Contact Us
+              Learn More
           </CustomLink>
           </section>
         </section>

@@ -13,9 +13,11 @@ const Footer = () => {
       <section>
         <h1 className="font-semibold text-xl">Adoration Farms</h1>
         <p className="mt-2">
-          Adoration Farms gives you the opportunity to own a Palm plantation in Nigeria. It all starts with a seed;
-          We use improved quality seeds that produce higher yields and are naturally more resistant to diseases
-          and pests.
+        Adoration Farms is a leading agritech company in Nigeria duly registered with CAC. 
+        We give you the opportunity to own a Palm plantation in Nigeria and aid you in growing 
+        it from land acquisition to harvest. We aid you in procuring seedlings, keeping track of 
+        farm progress, harvest and processing of produce. We use improved quality seeds that 
+        produce higher yields and are naturally more resistant to diseases and pests.
         </p>
         <ul className="flex items-center space-x-4 mt-4">
           <li>
