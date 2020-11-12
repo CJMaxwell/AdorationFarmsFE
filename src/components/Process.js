@@ -48,7 +48,7 @@ const Process = () => {
             <h1 className="font-semibold text-xl">Create an Account</h1>
             <p className="mt-2">
               You just a click away from owning a farm, producing, processing and
-              distributing health palm oil and palm produce with the globe.
+              distributing health palm oil and palm produce within the globe.
             </p>
           </section>
           <section className="text-center">
