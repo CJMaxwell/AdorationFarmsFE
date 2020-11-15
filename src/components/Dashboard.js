@@ -40,10 +40,12 @@ const Dashboard = () => {
               </section>
               <section className="mt-6">
                 <article>
-                  We offer palm plantation on a minimum of 5 acres(6 plots) of land in an area free of government acquisition.
-                  The land becomes outrightly yours after full payment. From our experts' advise, 350
-                  palm seedlings is grown on the land. Adoration Farms helps in managing the farmland
-                  from plumbing to harvesting as well as getting the other documents of the land for you.
+                  Now you are one of us, welcome to Adoration Farms. For you, we offer a minimum of 5 acres 
+                  (6 plots) of fertile land in an area that is legally free of government acquisition. 
+                  Upon the completion of your payment, the land becomes fully yours with tangible legal 
+                  documents to back your claim. As promised, our experts are on hand to help you manage your 
+                  farm from clearing, selection of seedlings to harvesting. Our first advise is to grow 350 
+                  palm seedlings on the land and watch your returns grow, literally.
               </article>
               </section>
               <section className="mt-16 text-center">

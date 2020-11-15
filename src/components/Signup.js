@@ -37,7 +37,9 @@ const Signup = () => {
   return (
     <Wrapper>
       <section className="px-8 lg:px-24 flex justify-center">
-
+        <h1 className="font-semibold text-xl pb-8">One more step, and you are a farm owner!</h1>
+      </section>
+      <section className="px-8 lg:px-24 flex justify-center">
         <Formik
           initialValues={{
             firstName: '',
@@ -164,7 +166,7 @@ const Signup = () => {
                 <div className="flex items-center input-wrap pt-8">
                   <input className="appearance-none bg-transparent border-none w-full input-text mr-3 py-1 px-2 leading-tight focus:outline-none"
                     type="text"
-                    placeholder="Referal Code"
+                    placeholder="Referral Code"
                     aria-label="Enter your referal code"
                   />
                 </div>

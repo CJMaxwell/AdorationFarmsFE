@@ -25,10 +25,11 @@ const About = () => {
         </section>
         <section className="lg:w-3/5 lg:pr-32 text-lg sm:w-full sm:pr-4">
           <article>
-            Adoration Farms is a platform that helps individuals invest in agriculture without being involved
-            in the activities. It assigns farmland to investors where palm trees are uniquely grown and managed
-            for them. This takes the burden of the plumbing activities which is usually a turn-off for
-            agribusiness lovers.
+            Adoration Farms is a company that provides a platform for individuals to safely and easily 
+            invest in agriculture without bearing the actual burden of farming. We assign farmlands to 
+            investors where palm trees are uniquely grown and managed by us, for them. We handle the 
+            technicalities of managing a farm and creating products off the harvest while keeping our 
+            investors in the loop throughout the process and making sure they get their return. 
           </article>
         </section>
       </section>
