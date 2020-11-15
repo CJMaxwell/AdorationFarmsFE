@@ -27,10 +27,10 @@ const Banner = () => {
           <h1 className="font-semibold text-3xl lg:text-6xl uppercase">
             Bridging the Gap
           </h1>
-          <p className="lg:text-xl pt-4">
+          <p className="lg:text-xl pt-4 pr-8 lg:pr-0">
             The global palm oil market is worth hundreds of millions of dollars every year.
-            We help individuals acquire &amp; manage Oil Palm plantations thereby taking off the 
-            stress of farming activities from farm owners, increasing their returns and producing 
+            We help individuals acquire &amp; manage Oil Palm plantations thereby taking off the
+            stress of farming activities from farm owners, increasing their returns and producing
             quality palm oil for the market using the latest available technology and methods.
           </p>
           <section className="flex pt-10 uppercase">
