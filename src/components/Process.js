@@ -98,9 +98,9 @@ const Process = () => {
       </section>
       <section className="block lg:grid lg:grid-cols-2 lg:gap-16 product">
         <section className="oil-kernel" />
-        <section className="px-8 lg:px-0 pr-24 py-0 lg:py-16">
+        <section className="px-8 lg:px-0 pr-24 py-16">
           <h1 className="font-semibold text-xl">Adoration Palm Oil</h1>
-          <p className="pt-0 lg:pt-6">
+          <p className="pt-6">
             Palm Oil from Adoration Farms is produced using the best methods and materials.
             We are all about the detail and we pay close attention from the seed up.
             Using the best available technology, we produce palm oil and palm produce without additives.
