@@ -44,7 +44,8 @@ const Footer = () => {
         <p className="mt-2 flex items-start">
           <span className="inline-flex mr-2 mt-2"><BiMap /></span>
           <span>
-            18, Olugba-Ilogbo,
+            18, Olu Ibokun Crescent,
+            Olugba-Ilogbo Road,
             Adodo-Otta,
           Ogun State.</span>
         </p>
