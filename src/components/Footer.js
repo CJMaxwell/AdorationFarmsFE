@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
 import { BiMap, BiPhone } from 'react-icons/bi';
 import { FiFacebook, FiTwitter } from 'react-icons/fi';
 
