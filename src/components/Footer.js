@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa';
 import { BiMap, BiPhone } from 'react-icons/bi';
+import { FiFacebook, FiTwitter } from 'react-icons/fi';
 
 const Wrapper = styled.footer`
 
@@ -28,12 +29,12 @@ const Footer = () => {
           </li>
           <li>
             <Link to="#fb" className="cursor-pointer">
-              <FaFacebookF />
+              <FiFacebook />
             </Link>
           </li>
           <li>
             <Link to="#twitter" className="cursor-pointer">
-              <FaTwitter />
+              <FiTwitter />
             </Link>
           </li>
         </ul>
