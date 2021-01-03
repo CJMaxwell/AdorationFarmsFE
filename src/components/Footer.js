@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa'
+import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa';
+import { BiMap, BiPhone } from 'react-icons/bi';
 
 const Wrapper = styled.footer`
 
@@ -13,11 +14,11 @@ const Footer = () => {
       <section>
         <h1 className="font-semibold text-xl">Adoration Farms</h1>
         <p className="mt-2">
-        Adoration Farms is a leading agritech company in Nigeria duly registered with CAC. 
-        We give you the opportunity to own a Palm plantation in Nigeria and aid you in growing 
-        it from land acquisition to harvest. We aid you in procuring seedlings, keeping track of 
-        farm progress, harvest and processing of produce. We use improved quality seeds that 
-        produce higher yields and are naturally more resistant to diseases and pests.
+          Adoration Farms is a leading agritech company in Nigeria duly registered with CAC.
+          We give you the opportunity to own a Palm plantation in Nigeria and aid you in growing
+          it from land acquisition to harvest. We aid you in procuring seedlings, keeping track of
+          farm progress, harvest and processing of produce. We use improved quality seeds that
+          produce higher yields and are naturally more resistant to diseases and pests.
         </p>
         <ul className="flex items-center space-x-4 mt-4">
           <li>
@@ -39,10 +40,16 @@ const Footer = () => {
       </section>
       <section className="w-full lg:mt-0 mt-10" id="contact-us">
         <h1 className="font-semibold text-xl">Contact Us</h1>
-        <p className="mt-2">
-          18, Olugba-Ilogbo,
-          Adodo-Otta,<br />
-          Ogun State.
+        <p className="mt-2 flex items-start">
+          <span className="inline-flex mr-2 mt-2"><BiMap /></span>
+          <span>
+            18, Olugba-Ilogbo,
+            Adodo-Otta,
+          Ogun State.</span>
+        </p>
+        <p className="mt-2 flex items-start">
+          <span className="inline-flex mr-2 mt-2"><BiPhone /></span>
+          <span>08149150980, 09090076828.</span>
         </p>
       </section>
       <section className="w-full lg:mt-0 mt-10">
