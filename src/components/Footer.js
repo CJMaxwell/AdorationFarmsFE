@@ -51,7 +51,7 @@ const Footer = () => {
         </p>
         <p className="mt-2 flex items-start">
           <span className="inline-flex mr-2 mt-2"><BiPhone /></span>
-          <span>08149150980, 09090076828.</span>
+          <span>08149150980, 09090076828, +4915753779213.</span>
         </p>
       </section>
       <section className="w-full lg:mt-0 mt-10">
